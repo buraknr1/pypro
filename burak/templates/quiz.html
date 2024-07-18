@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Quiz</title>
+</head>
+<body>
+    <h1>Python Quiz</h1>
+    <form action="/submit" method="post">
+        {% for question in questions %}
+            <p>{{ question[1] }}</p>
+            <input type="radio" id="q{{ question[0] }}a" name="q{{ question[0] }}" value="a">
+            <label for="q{{ question[0] }}a">{{ question[2] }}</label><br>
+            <input type="radio" id="q{{ question[0] }}b" name="q{{ question[0] }}" value="b">
+            <label for="q{{ question[0] }}b">{{ question[3] }}</label><br>
+            <input type="radio" id="q{{ question[0] }}c" name="q{{ question[0] }}" value="c">
+            <label for="q{{ question[0] }}c">{{ question[4] }}</label><br>
+            <input type="radio" id="q{{ question[0] }}d" name="q{{ question[0] }}" value="d">
+            <label for="q{{ question[0] }}d">{{ question[5] }}</label><br><br>
+        {% endfor %}
+        <input type="submit" value="Gönder">
+    </form>
+    <footer>
+        <p>Yazar: Mustafa Burak BAYRAM</p>
+    </footer>
+</body>
+</html>
